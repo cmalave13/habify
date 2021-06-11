@@ -1,11 +1,16 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
 import Welcome from "./Welcome/Welcome.jsx";
-import MyHabits from "./MyHabits/MyHabits.jsx";
+//import { Switch, Route } from "react-router-dom";
+//import MyHabits from "./MyHabits/MyHabits.jsx";
 
 class App extends Component {
   render() {
-    return <Welcome></Welcome>;
+    return (
+      <div>
+        <h1>yo this is a test</h1>
+        <Welcome></Welcome>
+      </div>
+    );
   }
 }
 

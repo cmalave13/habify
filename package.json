@@ -17,7 +17,8 @@
   "scripts": {
     "start": "webpack serve --mode development --open --hot",
     "build": "webpack --mode production",
-    "dev": "npm run webpack -- --mode development --watch",
+    "server": "nodemon server/server.js",
+    "dev": "webpack --mode development && node server/server.js",
     "webpack": "webpack"
   },
   "repository": {
