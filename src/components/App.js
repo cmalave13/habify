@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Welcome from "./Welcome/Welcome.jsx";
+import NavBar from "../components/NavBar/NavBar.jsx";
 //import { Switch, Route } from "react-router-dom";
 //import MyHabits from "./MyHabits/MyHabits.jsx";
 
@@ -7,8 +7,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>!!!</h1>
-        <Welcome></Welcome>
+        <NavBar></NavBar>
       </div>
     );
   }

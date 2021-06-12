@@ -1,2 +1,2 @@
-export { default } from "./Welcome";
+//export { default } from "./NavBar";
 //Cannot find module './components/Welcome'
