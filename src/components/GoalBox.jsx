@@ -41,7 +41,7 @@ export default function GoalBox() {
             name="checkedA"
           />
         }
-        label="Wake Up Before 7"
+        label="Wake Up Before 5am!!!"
       />
       <FormControlLabel
         control={

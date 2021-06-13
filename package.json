@@ -4,12 +4,16 @@
   "description": "simplify your habits, simplify your life",
   "main": "index.js",
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
     "express": "^4.17.1",
     "js-tokens": "^4.0.0",
     "loose-envify": "^1.4.0",
+    "moment": "^2.29.1",
     "object-assign": "^4.1.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "scheduler": "^0.20.2",
     "styled-components": "^5.3.0"
