@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../components/NavBar/NavBar.jsx";
+import GoalBox from "../components/GoalBox/GoalBox.jsx";
 //import { Switch, Route } from "react-router-dom";
 //import MyHabits from "./MyHabits/MyHabits.jsx";
 
@@ -8,6 +9,8 @@ class App extends Component {
     return (
       <div>
         <NavBar></NavBar>
+        <br />
+        <GoalBox></GoalBox>
       </div>
     );
   }
