@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-//import logo from "../images/logo.png";
+import img from "../images/logo.png";
 
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "center",
   },
   logo: {
-    maxWidth: 40,
-    marginRight: "10px",
+    maxWidth: 80,
+    textAlign: "center",
   },
 }));
 
@@ -47,7 +47,7 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="red">
+      <AppBar position="static" color="white">
         <Toolbar>
           <IconButton
             edge="start"
@@ -59,7 +59,11 @@ export default function NavBar() {
           </IconButton>
 
           <Typography variant="h6" className={classes.title}>
-            HABIFY
+            <img
+              src={"https://i.ibb.co/RScn3WP/logo.png"}
+              alt="logo"
+              className={classes.logo}
+            />
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>
