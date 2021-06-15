@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import NavBar from "./NavBar.jsx";
 import GoalBox from "./GoalBox.jsx";
+
 //import { Switch, Route } from "react-router-dom";
 //import MyHabits from "./MyHabits/MyHabits.jsx";
 
