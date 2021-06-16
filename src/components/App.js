@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import NavBar from "./NavBar.jsx";
 import GoalBox from "./GoalBox.jsx";
 import GoalBox2 from "./GoalBox2.jsx";
+import MediaCard from "./Cards.jsx";
+import Features from "./Container.jsx";
 
 //import { Switch, Route } from "react-router-dom";
 //import MyHabits from "./MyHabits/MyHabits.jsx";
@@ -11,8 +13,7 @@ class App extends Component {
     return (
       <div>
         <NavBar></NavBar>
-        <br />
-        <GoalBox2></GoalBox2>
+        <Features></Features>
       </div>
     );
   }
