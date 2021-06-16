@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "@material-ui/data-grid": "^4.0.0-alpha.31",
     "@material-ui/icons": "^4.11.2",
     "express": "^4.17.1",
     "js-tokens": "^4.0.0",
