@@ -3,7 +3,7 @@ import NavBar from "./NavBar.jsx";
 import GoalBox from "./GoalBox.jsx";
 import GoalBox2 from "./GoalBox2.jsx";
 import MediaCard from "./Cards.jsx";
-import Features from "./Container.jsx";
+import Months from "./AllMonths.jsx";
 
 //import { Switch, Route } from "react-router-dom";
 //import MyHabits from "./MyHabits/MyHabits.jsx";
@@ -13,7 +13,8 @@ class App extends Component {
     return (
       <div>
         <NavBar></NavBar>
-        <Features></Features>
+        <br />
+        <Months></Months>
       </div>
     );
   }

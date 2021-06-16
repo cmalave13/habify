@@ -7,66 +7,18 @@ import DetailsIcon from "@material-ui/icons/Details";
 import Button from "@material-ui/core/Button";
 import { purple } from "@material-ui/core/colors";
 
-const ColorButton = withStyles((theme) => ({
-  root: {
-    color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: purple[500],
-    "&:hover": {
-      backgroundColor: purple[700],
-    },
-  },
-}))(Button);
-
-const BootstrapButton = withStyles({
-  root: {
-    boxShadow: "none",
-    textTransform: "none",
-    fontSize: 16,
-    padding: "6px 12px",
-    border: "1px solid",
-    lineHeight: 1.5,
-    backgroundColor: "#000000",
-    borderColor: "#000000",
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-    "&:hover": {
-      backgroundColor: "#000000",
-      borderColor: "#000000",
-      boxShadow: "none",
-    },
-    "&:active": {
-      boxShadow: "none",
-      backgroundColor: "#000000",
-      borderColor: "#005cbf",
-    },
-    "&:focus": {
-      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
-    },
-  },
-})(Button);
-
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(12, 4),
+    padding: theme.spacing(8, 4),
   },
   card: {
-    height: "100%",
-    width: "75%",
+    height: "95%",
+    width: "95%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     border: "8px solid black",
-    borderRadius: "5px",
+    borderRadius: "3px",
     textAlign: "center",
     backgroundColor: "#ffd453",
   },
@@ -79,9 +31,18 @@ const useStyles = makeStyles((theme) => ({
   featureList: {
     padding: theme.spacing(2),
   },
+  button: {
+    background: "linear-gradient(45deg, #000000 30%, #353839 90%)",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(53, 56, 57)",
+    color: "white",
+    height: 48,
+    padding: "0 35px",
+  },
 }));
 
-const Features = () => {
+const Months = () => {
   const classes = useStyles();
 
   return (
@@ -90,38 +51,19 @@ const Features = () => {
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            {/* <ColorButton
-              variant="contained"
-              color="primary"
-              className={classes.margin}
-            >
-              JANUARY
-              
-            </ColorButton> */}
-            <BootstrapButton
-              variant="contained"
-              color="primary"
-              disableRipple
-              className={classes.margin}
-            >
-              JANUARY
-            </BootstrapButton>
+            <Button className={classes.button}>JANUARY</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              FEBRUARY
-            </Typography>
+            <Button className={classes.button}>FEBRUARY</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              MARCH
-            </Typography>
+            <Button className={classes.button}>MARCH</Button>
           </div>
         </Grid>
       </Grid>
@@ -132,25 +74,19 @@ const Features = () => {
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              APRIL
-            </Typography>
+            <Button className={classes.button}>APRIL</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              MAY
-            </Typography>
+            <Button className={classes.button}>MAY</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              JUNE
-            </Typography>
+            <Button className={classes.button}>JUNE</Button>
           </div>
         </Grid>
       </Grid>
@@ -161,25 +97,19 @@ const Features = () => {
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              JULY
-            </Typography>
+            <Button className={classes.button}>JULY</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              AUGUST
-            </Typography>
+            <Button className={classes.button}>AUGUST</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              SEPTEMBER
-            </Typography>
+            <Button className={classes.button}>SEPTEMBER</Button>
           </div>
         </Grid>
       </Grid>
@@ -190,25 +120,19 @@ const Features = () => {
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              OCTOBER
-            </Typography>
+            <Button className={classes.button}>OCTOBER</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              NOVEMBER
-            </Typography>
+            <Button className={classes.button}>NOVEMBER</Button>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Typography variant="h5" component="h3" className={classes.title}>
-              DECEMBER
-            </Typography>
+            <Button className={classes.button}>DECEMBER</Button>
           </div>
         </Grid>
       </Grid>
@@ -216,4 +140,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Months;
