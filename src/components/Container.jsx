@@ -17,13 +17,51 @@ const ColorButton = withStyles((theme) => ({
   },
 }))(Button);
 
+const BootstrapButton = withStyles({
+  root: {
+    boxShadow: "none",
+    textTransform: "none",
+    fontSize: 16,
+    padding: "6px 12px",
+    border: "1px solid",
+    lineHeight: 1.5,
+    backgroundColor: "#000000",
+    borderColor: "#000000",
+    fontFamily: [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+    "&:hover": {
+      backgroundColor: "#000000",
+      borderColor: "#000000",
+      boxShadow: "none",
+    },
+    "&:active": {
+      boxShadow: "none",
+      backgroundColor: "#000000",
+      borderColor: "#005cbf",
+    },
+    "&:focus": {
+      boxShadow: "0 0 0 0.2rem rgba(0,123,255,.5)",
+    },
+  },
+})(Button);
+
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(12, 4),
   },
   card: {
     height: "100%",
-    width: "100%",
+    width: "75%",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -52,13 +90,22 @@ const Features = () => {
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <ColorButton
+            {/* <ColorButton
               variant="contained"
               color="primary"
               className={classes.margin}
             >
               JANUARY
-            </ColorButton>
+              
+            </ColorButton> */}
+            <BootstrapButton
+              variant="contained"
+              color="primary"
+              disableRipple
+              className={classes.margin}
+            >
+              JANUARY
+            </BootstrapButton>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>

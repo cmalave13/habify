@@ -40,7 +40,7 @@ export default function DataGridDemo() {
   const divStyle = {
     marginLeft: "10px",
     height: 400,
-    width: "100%",
+    width: "80%",
   };
   return (
     <div style={divStyle}>
