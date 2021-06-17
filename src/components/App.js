@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import NavBar from "./NavBar.jsx";
 import Months from "./AllMonths.jsx";
 import June from "./jun.jsx";
-import June2 from "./jun2.jsx";
+import Login from "./Login.jsx";
+
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //import { Switch, Route } from "react-router-dom";
 //import MyHabits from "./MyHabits/MyHabits.jsx";
@@ -11,10 +13,14 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBar></NavBar>
-        <br />
-        <Months></Months>
-        <June2></June2>
+        <Router>
+          <NavBar />
+          <Switch>
+            <Route path="/" exact component={Months} />
+            <Route path="/Login" exact component={Login} />
+            <Route path="/June" exact component={June} />
+          </Switch>
+        </Router>
       </div>
     );
   }

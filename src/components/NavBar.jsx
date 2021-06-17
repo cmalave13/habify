@@ -9,6 +9,11 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import { Link } from "react-router-dom";
+import HomeIcon from "@material-ui/icons/Home";
+import { yellow } from "@material-ui/core/colors";
+
+import FaceIcon from "@material-ui/icons/Face";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,51 +26,61 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     textAlign: "center",
   },
+
   logo: {
     maxWidth: 80,
     textAlign: "center",
   },
+  stylebar: {
+    background: "linear-gradient(45deg, #000000 30%, #353839 90%)",
+    minHeight: 20,
+  },
+  button: {
+    background: "linear-gradient(45deg, #000000 30%, #353839 90%)",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(53, 56, 57)",
+    color: "white",
+    height: 48,
+    padding: "0 35px",
+  },
 }));
-
-/* logo
- <img src={logo} alt="logo" className={classes.logo} />
- */
-
-// const NavBar = () => {
-//   return (
-//     <div>
-//       <h1>Welcome to Habify - another test</h1>
-//       <Button variant="contained" color="primary">
-//         Yerrrrr
-//       </Button>
-//     </div>
-//   );
-// };
 
 export default function NavBar() {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <AppBar position="static" color="white">
+      <AppBar position="static" className={classes.stylebar}>
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
-            <MenuIcon />
-          </IconButton>
+          <Link to={{ pathname: "/" }}>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <HomeIcon style={{ color: yellow[500] }} />
+            </IconButton>
+          </Link>
 
           <Typography variant="h6" className={classes.title}>
             <img
-              src={"https://i.ibb.co/RScn3WP/logo.png"}
+              src={"https://i.ibb.co/fY7gnXb/habify-3-3.png"}
               alt="logo"
               className={classes.logo}
             />
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Link to={{ pathname: "/login" }}>
+            <IconButton
+              edge="start"
+              className={classes.menuButton}
+              color="inherit"
+              aria-label="menu"
+            >
+              <FaceIcon style={{ color: yellow[500] }} />
+            </IconButton>
+          </Link>
         </Toolbar>
       </AppBar>
     </div>

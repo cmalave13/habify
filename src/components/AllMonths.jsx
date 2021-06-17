@@ -5,11 +5,11 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import DetailsIcon from "@material-ui/icons/Details";
 import Button from "@material-ui/core/Button";
-import { purple } from "@material-ui/core/colors";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    padding: theme.spacing(8, 4),
+    padding: theme.spacing(12, 4),
   },
   card: {
     height: "95%",
@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "3px",
     textAlign: "center",
     backgroundColor: "#ffd453",
+    marginTop: "0px",
   },
   icon: {
     padding: theme.spacing(2, 0),
@@ -86,7 +87,9 @@ const Months = () => {
         <Grid item xs={12} sm={4}>
           <div className={classes.card}>
             <DetailsIcon fontSize="large" className={classes.icon} />
-            <Button className={classes.button}>JUNE</Button>
+            <Link style={{ textDecoration: "none" }} to={{ pathname: "/june" }}>
+              <Button className={classes.button}>JUNE</Button>
+            </Link>
           </div>
         </Grid>
       </Grid>
