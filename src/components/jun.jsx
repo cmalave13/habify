@@ -9,13 +9,38 @@ import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, withStyles } from "@material-ui/core/styles";
+
+import startOfWeek from "date-fns/startOfWeek";
+import endOfWeek from "date-fns/endOfWeek";
+import eachDayOfInterval from "date-fns/eachDayOfInterval";
+
+import { DateRangePicker } from "react-date-range";
+import { addDays } from "date-fns";
+import { useState } from "react";
+
+import { yellow } from "@material-ui/core/colors";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
+// import "react-date-range/dist/styles.css"; // main css file
+// import "react-date-range/dist/theme/default.css"; // theme css file
 
 const useStyles = makeStyles((theme) => ({
   seeMore: {
     marginTop: theme.spacing(3),
   },
 }));
+
+const YellowCheckbox = withStyles({
+  root: {
+    color: yellow[400],
+    "&$checked": {
+      color: yellow[600],
+      display: "flex",
+    },
+  },
+  checked: {},
+})((props) => <Checkbox color="default" {...props} />);
 
 const June = () => {
   // const [state, setState] = React.useState({
@@ -31,122 +56,117 @@ const June = () => {
 
   // const classes = useStyles();
 
+  // const [state, setState] = useState([
+  //   {
+  //     startDate: new Date(),
+  //     endDate: addDays(new Date(), 7),
+  //     key: "selection",
+  //   },
+  // ]);
+
+  const now = new Date(); //getting each day of current week
+  const daysOfWeek = eachDayOfInterval({
+    start: startOfWeek(now),
+    end: endOfWeek(now),
+  });
+
+  let habit1Cells = [];
+  for (let i = 0; i <= 6; i++) {
+    habit1Cells.push(
+      <TableCell>
+        <FormControlLabel control={<YellowCheckbox name="checkedG" />} />
+      </TableCell>
+    );
+  }
+
+  let habit2Cells = [];
+  for (let i = 0; i <= 6; i++) {
+    habit2Cells.push(
+      <TableCell>
+        <FormControlLabel control={<YellowCheckbox name="checkedG" />} />
+      </TableCell>
+    );
+  }
+
+  let habit3Cells = [];
+  for (let i = 0; i <= 6; i++) {
+    habit3Cells.push(
+      <TableCell>
+        <FormControlLabel control={<YellowCheckbox name="checkedG" />} />
+      </TableCell>
+    );
+  }
+
+  let habit4Cells = [];
+  for (let i = 0; i <= 6; i++) {
+    habit4Cells.push(
+      <TableCell>
+        <FormControlLabel control={<YellowCheckbox name="checkedG" />} />
+      </TableCell>
+    );
+  }
+
   return (
     <React.Fragment>
-      <Container fixed>
+      <Container maxWidth="sm">
         <Table size="small">
           <TableHead>
             <TableRow>
-              <TableCell>Habit</TableCell>
-              <TableCell>06.13.21</TableCell>
-              <TableCell>06.14.21</TableCell>
-              <TableCell>06.15.21</TableCell>
-              <TableCell>06.16.21</TableCell>
-              <TableCell>06.17.21</TableCell>
-              <TableCell>06.18.21</TableCell>
-              <TableCell>06.19.21</TableCell>
+              <TableCell>HABIT</TableCell>
+              <TableCell>
+                {daysOfWeek[0].toDateString().replace("2021", "")}
+              </TableCell>
+              <TableCell>
+                {daysOfWeek[1].toDateString().replace("2021", "")}
+              </TableCell>
+              <TableCell>
+                {daysOfWeek[2].toDateString().replace("2021", "")}
+              </TableCell>
+              <TableCell>
+                {daysOfWeek[3].toDateString().replace("2021", "")}
+              </TableCell>
+              <TableCell>
+                {daysOfWeek[4].toDateString().replace("2021", "")}
+              </TableCell>
+              <TableCell>
+                {daysOfWeek[5].toDateString().replace("2021", "")}
+              </TableCell>
+              <TableCell>
+                {daysOfWeek[6].toDateString().replace("2021", "")}
+              </TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             <TableRow>
               <TableCell>Wake Up @ 630</TableCell>
-              <TableCell>
-                <Checkbox name="day1" label="Wake Up @ 630" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day2" label="Wake Up @ 630" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day3" label="Wake Up @ 630" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day4" label="Wake Up @ 630" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day5" label="Wake Up @ 630" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day6" label="Wake Up @ 630" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day7" label="Wake Up @ 630" />
-              </TableCell>
+              {habit1Cells}
             </TableRow>
             <TableRow>
               <TableCell>Meditate</TableCell>
-              <TableCell>
-                <Checkbox name="day1" label="Meditate" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day2" label="Meditate" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day3" label="Meditate" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day4" label="Meditate" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day5" label="Meditate" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day6" label="Meditate" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day7" label="Meditate" />
-              </TableCell>
+              {habit2Cells}
             </TableRow>
             <TableRow>
               <TableCell>Exercise</TableCell>
-              <TableCell>
-                <Checkbox name="day1" label="Exercise" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day2" label="Exercise" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day3" label="Exercise" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day4" label="Exercise" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day5" label="Exercise" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day6" label="Exercise" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day7" label="Exercise" />
-              </TableCell>
+              {habit3Cells}
             </TableRow>
             <TableRow>
               <TableCell>Read</TableCell>
-              <TableCell>
-                <Checkbox name="day1" label="Read" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day2" label="Read" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day3" label="Read" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day4" label="Read" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day5" label="Read" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day6" label="Read" />
-              </TableCell>
-              <TableCell>
-                <Checkbox name="day7" label="Read" />
-              </TableCell>
+              {habit4Cells}
             </TableRow>
           </TableBody>
         </Table>
       </Container>
+      {/* <Container>
+        <DateRangePicker
+          onChange={(item) => setState([item.selection])}
+          showSelectionPreview={true}
+          moveRangeOnFirstSelection={false}
+          months={2}
+          ranges={state}
+          direction="horizontal"
+        />
+        ;
+      </Container> */}
     </React.Fragment>
   );
 };
