@@ -17,6 +17,16 @@ app.get("/api", (req, res) => {
   res.send(mockResponse);
 });
 
+// app.get("/jun", (req, res) => {
+//   res
+//     .status(200)
+//     .set({
+//       "Content-type": "text/html",
+//       charset: "UTF-8",
+//     })
+//     .sendFile(path.join(__dirname, ".././src/components/jun.html"));
+// });
+
 app.get("/", (req, res) => {
   res.sendFile(HTML_FILE);
 });
