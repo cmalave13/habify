@@ -9,6 +9,7 @@
     "@material-ui/icons": "^4.11.2",
     "date-fns": "^2.22.1",
     "express": "^4.17.1",
+    "framer-motion": "^4.1.17",
     "js-tokens": "^4.0.0",
     "loose-envify": "^1.4.0",
     "moment": "^2.29.1",

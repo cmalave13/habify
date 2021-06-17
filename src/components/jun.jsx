@@ -22,6 +22,8 @@ import { useState } from "react";
 import { yellow } from "@material-ui/core/colors";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 
+import { motion } from "framer-motion";
+
 // import "react-date-range/dist/styles.css"; // main css file
 // import "react-date-range/dist/theme/default.css"; // theme css file
 
@@ -107,56 +109,57 @@ const June = () => {
   }
 
   return (
-    <React.Fragment>
-      <Container maxWidth="sm">
-        <Table size="small">
-          <TableHead>
-            <TableRow>
-              <TableCell>HABIT</TableCell>
-              <TableCell>
-                {daysOfWeek[0].toDateString().replace("2021", "")}
-              </TableCell>
-              <TableCell>
-                {daysOfWeek[1].toDateString().replace("2021", "")}
-              </TableCell>
-              <TableCell>
-                {daysOfWeek[2].toDateString().replace("2021", "")}
-              </TableCell>
-              <TableCell>
-                {daysOfWeek[3].toDateString().replace("2021", "")}
-              </TableCell>
-              <TableCell>
-                {daysOfWeek[4].toDateString().replace("2021", "")}
-              </TableCell>
-              <TableCell>
-                {daysOfWeek[5].toDateString().replace("2021", "")}
-              </TableCell>
-              <TableCell>
-                {daysOfWeek[6].toDateString().replace("2021", "")}
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            <TableRow>
-              <TableCell>Wake Up @ 630</TableCell>
-              {habit1Cells}
-            </TableRow>
-            <TableRow>
-              <TableCell>Meditate</TableCell>
-              {habit2Cells}
-            </TableRow>
-            <TableRow>
-              <TableCell>Exercise</TableCell>
-              {habit3Cells}
-            </TableRow>
-            <TableRow>
-              <TableCell>Read</TableCell>
-              {habit4Cells}
-            </TableRow>
-          </TableBody>
-        </Table>
-      </Container>
-      {/* <Container>
+    <motion.div exit={{ opacity: 0 }}>
+      <React.Fragment>
+        <Container maxWidth="sm">
+          <Table size="small">
+            <TableHead>
+              <TableRow>
+                <TableCell>HABIT</TableCell>
+                <TableCell>
+                  {daysOfWeek[0].toDateString().replace("2021", "")}
+                </TableCell>
+                <TableCell>
+                  {daysOfWeek[1].toDateString().replace("2021", "")}
+                </TableCell>
+                <TableCell>
+                  {daysOfWeek[2].toDateString().replace("2021", "")}
+                </TableCell>
+                <TableCell>
+                  {daysOfWeek[3].toDateString().replace("2021", "")}
+                </TableCell>
+                <TableCell>
+                  {daysOfWeek[4].toDateString().replace("2021", "")}
+                </TableCell>
+                <TableCell>
+                  {daysOfWeek[5].toDateString().replace("2021", "")}
+                </TableCell>
+                <TableCell>
+                  {daysOfWeek[6].toDateString().replace("2021", "")}
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              <TableRow>
+                <TableCell>Wake Up @ 630</TableCell>
+                {habit1Cells}
+              </TableRow>
+              <TableRow>
+                <TableCell>Meditate</TableCell>
+                {habit2Cells}
+              </TableRow>
+              <TableRow>
+                <TableCell>Exercise</TableCell>
+                {habit3Cells}
+              </TableRow>
+              <TableRow>
+                <TableCell>Read</TableCell>
+                {habit4Cells}
+              </TableRow>
+            </TableBody>
+          </Table>
+        </Container>
+        {/* <Container>
         <DateRangePicker
           onChange={(item) => setState([item.selection])}
           showSelectionPreview={true}
@@ -167,7 +170,8 @@ const June = () => {
         />
         ;
       </Container> */}
-    </React.Fragment>
+      </React.Fragment>
+    </motion.div>
   );
 };
 
